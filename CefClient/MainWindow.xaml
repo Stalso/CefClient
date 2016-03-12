@@ -1,0 +1,34 @@
+﻿<Window x:Class="CefClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CefClient"
+        xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1200">
+    <Grid>
+        <TabControl Margin="5">
+            <TabItem Header="Selfhosted">
+                <Grid>
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <cefSharp:ChromiumWebBrowser Name="selfHostedBrowser" Address="http://localhost:10450/"/>
+                    <StackPanel Grid.Column="1">
+                        <StackPanel Margin="5">
+                            <Button Name="SelHostedRenewButton" Content="Renew" Height="30" Width="90"/>
+                            <Button Name="SelHostedGetButton" Content="Get" Height="30" Width="90"/>
+                        </StackPanel>
+                        <RichTextBox Name="SelfHostedLog" Width="150">
+                        </RichTextBox>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <!--<cefSharp:ChromiumWebBrowser Grid.Row="0"
+        Address="https://github.com/cefsharp/CefSharp/wiki/Frequently-asked-questions" />-->
+    </Grid>
+</Window>
